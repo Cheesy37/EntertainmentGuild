@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EntertainmentGuild.Models.Game>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a class="nav-link text-dark" asp-area="" asp-action="All">Edit Database</a>
+<table style="width:100%">
+    <tr>
+        <td>
+            <h2 class="font-weight-light">Trending Now</h2>
+        </td>
+        <td style="text-align: right">
+            <h4>View All</h4>
+        </td>
+    </tr>
+</table>
+<div class="container-fluid py-2; wrapper">
+
+
+    <div class="d-flex flex-row flex-nowrap overflow-auto">
+        @foreach (var item in Model)
+        {
+            <div class="card card-body mx-2" style="min-width: 300px; min-height: 300px">
+                <h3>
+                    @Html.DisplayFor(modelItem => item.Title)<br>
+                </h3>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)<br>
+                @Html.DisplayFor(modelItem => item.Genre)<br>
+                @Html.DisplayFor(modelItem => item.Price)
+
+            </div>
+        }
+    </div>
+</div>
+<br />
+<table style="width:100%">
+    <tr>
+        <td>
+            <h2 class="font-weight-light">Upcoming Releases</h2>
+        </td>
+        <td style="text-align: right">
+            <h4>View All</h4>
+        </td>
+    </tr>
+</table>
+<div class="container-fluid py-2; wrapper">
+
+    <div class="d-flex flex-row flex-nowrap overflow-auto">
+        @foreach (var item in Model)
+        {
+            <div class="card card-body mx-2" style="min-width: 300px; min-height: 300px">
+                <h3>
+                    @Html.DisplayFor(modelItem => item.Title)<br>
+                </h3>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)<br>
+                @Html.DisplayFor(modelItem => item.Genre)<br>
+                @Html.DisplayFor(modelItem => item.Price)
+
+            </div>
+        }
+    </div>
+</div>
